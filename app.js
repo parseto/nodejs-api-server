@@ -7,6 +7,7 @@ const nunjucks = require("nunjucks");
 var cors = require("cors");
 var txRoutes = require("./routes/txRoutes");
 var googleApiRoutes = require("./routes/googleApiRoutes");
+var googleApiBusanRoutes = require("./routes/googleApiBusanRoutes");
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(express.static('./public'));
 app.use("/", txRoutes);
 app.use("/api/tx", txRoutes);
 app.use("/api/google", googleApiRoutes);
+app.use("/api/google/busan", googleApiBusanRoutes);
 
 // basic settings
 app.use(logger("dev"));

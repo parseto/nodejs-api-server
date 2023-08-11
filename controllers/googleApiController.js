@@ -9,12 +9,13 @@ const { JWT } = require("google-auth-library");
 
 // Initialize auth - see https://theoephraim.github.io/node-google-spreadsheet/#/guides/authentication
 const serviceAccountAuth = new JWT({
-    email: client_email,
-    // || process.env.S1,
-    key: private_key,
-    // || process.env.S2.replace(/\\n/g, "\n"),
+    // email: client_email,
+    email: process.env.S1,
+    // key: private_key,
+    key: process.env.S2.replace(/\\n/g, "\n"),
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
+
 
 const rowSample = [
     {

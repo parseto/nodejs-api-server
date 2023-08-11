@@ -5,7 +5,7 @@ const { log } = console
 
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 const { JWT } = require("google-auth-library");
-const { client_email, private_key } = require("../public/resources/.key.json");
+// const { client_email, private_key } = require("../public/resources/.key.json");
 
 // Initialize auth - see https://theoephraim.github.io/node-google-spreadsheet/#/guides/authentication
 const serviceAccountAuth = new JWT({

@@ -62,7 +62,7 @@ async function getDataMain() {
     );
 
     await doc.loadInfo(); // loads document properties and worksheets
-    const sheet = doc.sheetsByIndex[1];
+    const sheet = doc.sheetsByIndex[0];
     const rows = await functions.getRow(sheet);
     return rows.map((d) => d._rawData);
 }

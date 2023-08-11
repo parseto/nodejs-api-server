@@ -21,6 +21,7 @@ const rowSample = [
         name: "sample",
         msg: "10000",
         color: "FALSE",
+        timeStamp: "",
         
     },
 ]
@@ -44,10 +45,10 @@ async function postDataMain(row) {
 
     await doc.loadInfo(); // loads document properties and worksheets
 
-    const sheet = doc.sheetsByIndex[1];
+    const sheet = doc.sheetsByIndex[0];
 
 
-    const makeRow = (row) => ({ name: row[0], msg: row[1], color: row[2]})
+    const makeRow = (row) => ({ name: row[0], msg: row[1], color: row[2] , timeStamp: `${row[3]}` })
 
     const writeRow = await functions.addRow(sheet, row.map(makeRow) || rowSample);
 
